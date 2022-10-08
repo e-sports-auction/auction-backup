@@ -2,8 +2,7 @@
     position: static;
     background-color: black;
 }
-
-    .body::before {
+.body::before {
         content: "";
         position: absolute;
         top: 0;
@@ -12,9 +11,8 @@
         bottom: 0;
         background-image: url(../img/crick.jpg);
         background-size: cover;
-        background-attachment: fixed;
         opacity: 0.5;
-    }
+}
 
 .container {
     position: relative;
@@ -63,21 +61,42 @@ input, select {
     margin-top: 15px;
 }
 
+#btnUpdate {
+    width: 430px;
+    height: 35px;
+    border-style: none;
+    background-color: #008080;
+    color: white;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
 .link {
     font-size: 12px;
     margin-left: 150px;
 }
 
-a {
+#lbUpdate, #lbRegister {
     font-size: 11px;
     margin-left: 40px;
     text-decoration: none;
     color: #008080;
 }
 
-h3 {
+#lblUpdateEmail {
+    font-size: 11px;
+    color: #008080;
+}
+
+#lblbelow {
+    font-size: 12px;
+    margin-left: 20px;
+}
+
+.head {
     color: #008080;
     font-weight: bold;
+    font-size: 26px;
 }
 
 select, #dob {
@@ -86,7 +105,7 @@ select, #dob {
 
 .row {
     margin-top: 15px;
-} 
+}
 
 .heading {
     padding-bottom: 15px;
@@ -101,4 +120,3 @@ input:focus {
     color: red;
     font-size: 11px;
 }
-

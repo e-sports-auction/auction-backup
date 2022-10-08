@@ -9,24 +9,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"/>
     <link rel="stylesheet" href="../css/register.css"/>
-    <title>E-Sports Auction</title>
-        <script>
-        function showPassword() {
-            // Get the checkbox
-            var checkBox = document.getElementById("myCheck");
+    <title>E-Sports Auction</title> 
+    
+     <script>
+         function myFunction() {
+             var x = prompt('Enter your Email');
+             document.getElementById('lblUpdateEmail').innerHTML = x;
+         }
 
-            // If the checkbox is checked, display the output text
-            if (checkBox.checked == true) {
-                txtPassword.type = "text";
-                txtConpass.type = "text";
-            } else {
-                txtPassword.type = "password";
-                txtConpass.type = "password";
+         function showPassword() {
+             // Get the checkbox
+             var checkBox = document.getElementById("myCheck");
 
-            }
-        }
-        </script>
-    <style>
+             // If the checkbox is checked, display the output text
+             if (checkBox.checked == true) {
+                 txtPassword.type = "text";
+                 txtConpass.type = "text";
+             } else {
+                 txtPassword.type = "password";
+                 txtConpass.type = "password";
+
+             }
+         }
+     </script>
+
+     <style>
         .checkB{
             width:20px
         }
@@ -35,19 +42,20 @@
             margin-top:8px;
 
         }
-
         
     </style>
+   
 </head>
 <body class="body">
     <div class="container">
         <form class="form" id="form" runat="server">
+             <asp:Label ID="lblUpdateEmail" runat="server" Text="" ></asp:Label>
             <div class="heading">
-                <h3 class="head">Registration</h3>
+                <asp:Label ID="lblRe" class="head" runat="server"></asp:Label>    
             </div>
             <div class="row">
                 <div class="col">
-                    <label for="firstname">First Name</label><br/>
+                    <label for="firstname" id="abc">First Name</label><br/>
                     <asp:TextBox type="name" name="firstname" id="txtFirst" runat="server"/><br />
                     <asp:Label ID="lblError_first" CssClass="errors" runat="server"/>
                 </div> 
@@ -130,23 +138,25 @@
                     <asp:Label ID="lblError_conpass" CssClass="errors" runat="server"/>
                 </div>
             </div>
-
-                <div class="btnContainer">
+            <div class="btnContainer">
                 <input id="myCheck" class="checkB B" onclick="showPassword()" type="checkbox"/>
                 <label class="check B">Show Password</label>
-                </div>
+            </div>
                 <br/>
                 <asp:Label ID="lblError" CssClass="errors" runat="server"/>
                 <asp:button id="btnRegister" Text="REGISTER" runat="server" OnClick="btnRegister_Click"/>
+                <asp:button id="btnUpdate" Text="UPDATE" runat="server" OnClick="btnUpdate_Click"/>
                 <br/>
                 <asp:button id="btnCancel" Text="CANCEL" runat="server"/>
                 <br/><br/>
             <div class="link">
-                <label >Already have an account</label><br/>
-                <a href="pgLogin.aspx">Update here</a>
+                <asp:Label ID="lblbelow" runat="server" Text=""></asp:Label><br />
+                <asp:LinkButton ID="lbUpdate" runat="server" OnClick="lbUpdate_Click">Update here</asp:LinkButton>
+                <asp:LinkButton ID="lbRegister" runat="server" Onclick="lbRegister_Click">Register here</asp:LinkButton>
             </div>
         </form>
     </div>
+    
     <script src="../js/register.js"></script>
 </body>
 </html>

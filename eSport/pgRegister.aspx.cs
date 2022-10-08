@@ -28,6 +28,10 @@ namespace e_sport_trial.player
             }
             con.Open();
 
+            btnUpdate.Visible = false;
+            lbRegister.Visible = false;
+            lblRe.Text = "Registration";
+            lblbelow.Text = "Something Wrong";
             clear_labels();
         }
 
@@ -210,5 +214,169 @@ namespace e_sport_trial.player
             txtConpass.Text = "";
         }
 
+        protected void lbUpdate_Click(object sender, EventArgs e)
+        {
+            Page.ClientScript.RegisterStartupScript(this.GetType(), "myKey", "myFunction()", true);
+
+            lblRe.Text = "Update Registration";
+            lblbelow.Text = "Haven't Register";
+            btnRegister.Visible = false;
+            btnUpdate.Visible = true;
+            lbUpdate.Visible = false;
+            lbRegister.Visible = true;
+            txtEmail.Enabled = false;
+
+            String mail = lblUpdateEmail.Text;
+
+            if (mail != "") 
+            { 
+                SqlCommand Com = new SqlCommand("select * from player where Email='" + mail + "'", con);
+                SqlDataReader dr = Com.ExecuteReader();
+                if (dr.Read())
+                {
+
+                    txtFirst.Text = dr.GetValue(1).ToString();
+                    txtLast.Text = dr.GetValue(2).ToString();
+                    txtEmail.Text = dr.GetValue(3).ToString();
+                    txtDob.Text = dr.GetValue(4).ToString();
+                    dplRole.Text = dr.GetValue(5).ToString();
+                    txtRuns.Text = dr.GetValue(6).ToString();
+                    txtWickets.Text = dr.GetValue(7).ToString();
+                    txtmatch.Text = dr.GetValue(8).ToString();
+                    dplArm.Text = dr.GetValue(9).ToString();
+                    txtPassword.Text = dr.GetValue(12).ToString();     
+                }
+            }
+        }
+
+        protected void lbRegister_Click(object sender, EventArgs e)
+        {
+            Response.Redirect(Request.RawUrl);
+        }
+
+        protected void btnUpdate_Click(object sender, EventArgs e)
+        {
+
+            clear_labels();
+
+            // validation of name and number
+            String first = txtFirst.Text;
+            String last = txtLast.Text;
+            String dob = txtDob.Text;
+            String role = dplRole.Text;
+            String runs = txtRuns.Text;
+            String wicket = txtWickets.Text;
+            String matches = txtmatch.Text;
+            String arm = dplArm.Text;
+            String pass = txtPassword.Text;
+            String conpass = txtConpass.Text;
+            String UpEmail = lblUpdateEmail.Text;
+
+
+            if (first == "")
+            {
+                lblError_first.Text = "This field is required !";
+            }
+            if (last == "")
+            {
+                lblError_last.Text = "This field is required !";
+            }
+            if (dob == "")
+            {
+                lblError_dob.Text = "This field is required !";
+            }
+            if (role == "")
+            {
+                lblError_role.Text = "This field is required !";
+            }
+            if (runs == "")
+            {
+                lblError_runs.Text = "This field is required !";
+            }
+            if (wicket == "")
+            {
+                lblError_wickets.Text = "This field is required !";
+            }
+            if (matches == "")
+            {
+                lblError_match.Text = "This field is required !";
+            }
+            if (arm == "")
+            {
+                lblError_arm.Text = "This field is required !";
+            }
+            if (pass == "")
+            {
+                lblError_pass.Text = "This field is required !";
+            }
+            if (conpass == "")
+            {
+                lblError_conpass.Text = "This field is required !";
+            }
+
+            if (pass != conpass)
+            {
+                lblError_conpass.Text = "Password and Confirm Password arent the Same";
+            }
+
+            else
+            {
+                try
+                {
+                    if (FileUpload1.HasFile)
+                    {
+                        string str = FileUpload1.FileName;
+                        FileUpload1.PostedFile.SaveAs(Server.MapPath("~/img/players/" + str));
+                        string img = "~/img/players/" + str.ToString();
+
+                        //check if player already exists
+
+
+                        if (con.State == ConnectionState.Open)
+                        {
+                            con.Close();
+                        }
+                        con.Open();
+
+
+                        SqlCommand cmd = con.CreateCommand();
+                        cmd.CommandType = CommandType.Text;
+                        cmd.CommandText = "select * from player where Email='" + UpEmail + "'";
+
+                        //Read Emails exist
+                        if (cmd.ExecuteReader().Read())
+                        {
+
+                            //update command
+                            string query = "UPDATE player SET FirstName ='" + first + "', LastName = '" + last + "', Email ='" + UpEmail + "', Dob = '" + dob + "', Role ='" + role + "', Runs ='" + runs + "', Wickets ='" + wicket + "', Matches = '" + matches + "', ArmStyle ='" + arm + "',, Image = '" + img + "', BasePrice = 0, Password = '" + pass + "',Status = 0 WHERE Email = '" + UpEmail + "'";
+                            SqlCommand cmd1 = con.CreateCommand();
+                            cmd1.CommandType = CommandType.Text;
+                            cmd1.CommandText = query;
+                            cmd1.ExecuteNonQuery();
+
+                            //registered successfully
+                            Response.Write("<script>Alert('Updated Successfully')</script>");
+
+                            con.Close();
+                        }
+
+                        else
+                        {
+                            lblError.Text = "The entered Email-address does not exist..!";
+                        }
+                    }
+                    else
+                    {
+                        lblError_image.Text = "This field is required !";
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    lblError.Text = ex.Message;
+
+                }
+            }
+        }
     }
 }

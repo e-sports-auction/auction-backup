@@ -3,17 +3,17 @@
     background-color: black;
 }
 
-.body::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    background-image: url(../img/crick.jpg);
-    background-size: cover;
-    opacity: 0.5;
-}
+    .body::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        background-image: url(../img/crick.jpg);
+        background-size: cover;
+        opacity: 0.5;
+    }
 
 .container {
     position: relative;
@@ -78,7 +78,7 @@ tbody th {
 .btn1 {
     width: 70px;
     height: 30px;
-    background-color: transparent; 
+    background-color: transparent;
     color: white;
     font-size: small;
     font-weight: bold;
@@ -87,11 +87,11 @@ tbody th {
     opacity: 0.7;
 }
 
-.btn1:hover {
-    background-color: #008080;
-    border-color:#008080;
-    opacity: 1;
-}
+    .btn1:hover {
+        background-color: #008080;
+        border-color: #008080;
+        opacity: 1;
+    }
 
 .team-list {
     border: 1px solid gray;
@@ -108,7 +108,7 @@ tbody th {
     margin: auto;
 }
 
-h5 {
+.h5 {
     color: #008080;
     font-weight: bold;
     margin-top: 10px;
@@ -116,7 +116,7 @@ h5 {
 
 .team-list td {
     font-weight: bold;
-    color:rgb(164, 165, 169);
+    color: rgb(164, 165, 169);
 }
 
 .lo {
@@ -128,18 +128,18 @@ h5 {
 
 .btn2 {
     margin-left: 83%;
-    width:  100px;
+    width: 100px;
     height: 30px;
     background-color: transparent;
-    border: 2px solid 	#DC3545;
+    border: 2px solid #DC3545;
     border-radius: 50px;
     color: #DC3545;
 }
 
-.btn2:hover {
-    background-color: #DC3545;
-    color: white;
-}
+    .btn2:hover {
+        background-color: #DC3545;
+        color: white;
+    }
 
 .logo {
     width: 40px;
@@ -148,27 +148,26 @@ h5 {
 }
 
 .h {
-        text-align: center;
+    text-align: center;
 }
 
 .btnx {
     width: 70px;
     height: 30px;
-    background-color: transparent; 
+    background-color: transparent;
     color: white;
     font-size: small;
     font-weight: bold;
     border: 1px solid white;
     border-radius: 5px;
-    opacity: 0.7; 
-
+    opacity: 0.7;
 }
 
-.btnx:hover {
-    background-color: #f0ad4e;
-    border-color: #f0ad4e;
-    opacity: 1; 
-}
+    .btnx:hover {
+        background-color: #f0ad4e;
+        border-color: #f0ad4e;
+        opacity: 1;
+    }
 
 .btny {
     width: 70px;
@@ -179,16 +178,14 @@ h5 {
     font-size: small;
     font-weight: bold;
     border-radius: 5px;
-    opacity: 0.7; 
+    opacity: 0.7;
 }
 
-.btny:hover {
-    opacity: 1;  
-}
+    .btny:hover {
+        opacity: 1;
+    }
 
-#lblError {
+#lblError, #lblTError {
     color: red;
     font-size: 11px;
 }
-
-
