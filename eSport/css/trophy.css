@@ -1,0 +1,194 @@
+.body {
+    position: static;
+    background-color: black;
+}
+
+.body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-image: url(../img/crick.jpg);
+    background-size: cover;
+    opacity: 0.5;
+}
+
+.container {
+    position: relative;
+}
+
+.form {
+    background-color: white;
+    border: 1px solid gray;
+    width: 298px;
+    height: 620px;
+    padding: 40px;
+    margin-top: 30px;
+    color: rgb(164, 165, 169);
+    font-weight: bold;
+}
+
+input, select {
+    width: 215px;
+    background-color: rgb(230, 231, 233);
+    border-style: none;
+    height: 30px;
+    margin-bottom: 10px;
+}
+
+#btnCreate {
+    width: 215px;
+    height: 35px;
+    border-style: none;
+    background-color: #008080;
+    color: white;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+#btnCancel {
+    width: 215px;
+    height: 35px;
+    border: 1px solid #008080;
+    color: #008080;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+h3 {
+    color: #008080;
+    font-weight: bold;
+}
+
+.table {
+    margin-top: 40px;
+    margin-right: 80px;
+}
+
+td {
+    color: white;
+}
+
+tbody th {
+    color: white;
+}
+
+.btn1 {
+    width: 70px;
+    height: 30px;
+    background-color: transparent; 
+    color: white;
+    font-size: small;
+    font-weight: bold;
+    border: 1px solid white;
+    border-radius: 5px;
+    opacity: 0.7;
+}
+
+.btn1:hover {
+    background-color: #008080;
+    border-color:#008080;
+    opacity: 1;
+}
+
+.team-list {
+    border: 1px solid gray;
+    border-radius: 5px;
+    width: 700px;
+    background-color: white;
+    padding: 0px 20px 20px 20px;
+}
+
+.log {
+    border: 1px dotted gray;
+    width: 100px;
+    height: 100px;
+    margin: auto;
+}
+
+h5 {
+    color: #008080;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.team-list td {
+    font-weight: bold;
+    color:rgb(164, 165, 169);
+}
+
+.lo {
+    width: 20px;
+    height: 20px;
+    border: 1px solid gray;
+    margin-right: 10px;
+}
+
+.btn2 {
+    margin-left: 83%;
+    width:  100px;
+    height: 30px;
+    background-color: transparent;
+    border: 2px solid 	#DC3545;
+    border-radius: 50px;
+    color: #DC3545;
+}
+
+.btn2:hover {
+    background-color: #DC3545;
+    color: white;
+}
+
+.logo {
+    width: 40px;
+    height: 40px;
+    border: 1px solid gray;
+}
+
+.h {
+        text-align: center;
+}
+
+.btnx {
+    width: 70px;
+    height: 30px;
+    background-color: transparent; 
+    color: white;
+    font-size: small;
+    font-weight: bold;
+    border: 1px solid white;
+    border-radius: 5px;
+    opacity: 0.7; 
+
+}
+
+.btnx:hover {
+    background-color: #f0ad4e;
+    border-color: #f0ad4e;
+    opacity: 1; 
+}
+
+.btny {
+    width: 70px;
+    height: 30px;
+    background-color: #DC3545;
+    border-color: #DC3545;
+    color: white;
+    font-size: small;
+    font-weight: bold;
+    border-radius: 5px;
+    opacity: 0.7; 
+}
+
+.btny:hover {
+    opacity: 1;  
+}
+
+#lblError {
+    color: red;
+    font-size: 11px;
+}
+
+

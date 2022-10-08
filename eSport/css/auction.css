@@ -1,0 +1,66 @@
+    .body {
+    position: static;
+    background-color: black;
+}
+
+.body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-image: url(../img/crick.jpg);
+    background-size: cover;
+    opacity: 0.5;
+}
+
+.container {
+    position: relative;
+}
+
+.row {
+    margin: auto;
+    border: 1px solid gray;
+    width: 70%;
+    height: 270px;
+    margin-top: 30px;
+    padding: 30px;
+    color: rgb(164, 165, 169);
+    background-color: white;
+    font-weight: bold;
+
+}
+
+.profilepic {
+    border: 1px solid gray;
+    width: 150px;
+    height: 150px;
+    background-image: url('../img/dhoni.jpg');
+    background-size: cover;
+    border-radius: 50%;
+}
+
+input {
+    width: 219px;
+    background-color: rgb(230, 231, 233);
+    border-style: none;
+}
+
+#btnSold {
+    width: 219px;
+    height: 35px;
+    border-style: none;
+    background-color: #008080;
+    color: white;
+    font-weight: bold;
+}
+
+#btnUnsold {
+    width: 219px;
+    height: 35px;
+    border: 1px solid #008080;
+    color: #008080;
+    font-weight: bold;
+    margin-top: 15px;
+}

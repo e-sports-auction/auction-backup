@@ -1,0 +1,104 @@
+.body {
+    position: static;
+    background-color: black;
+}
+
+    .body::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        background-image: url(../img/crick.jpg);
+        background-size: cover;
+        background-attachment: fixed;
+        opacity: 0.5;
+    }
+
+.container {
+    position: relative;
+    background-color: white;
+    border: 1px solid gray;
+    width: 500px;
+    height: 1500px;
+    padding: 30px;
+    margin-top: 10px;
+    color: rgb(164, 165, 169);
+    font-weight: bold;
+    padding-right: 0px;
+}
+
+input, select {
+    width: 185px;
+    background-color: rgb(230, 231, 233);
+    border-style: none;
+}
+
+#show {
+    width: 20px;
+    margin-left: 305px;
+}
+
+.check {
+    font-size: 11px;
+}
+
+#btnRegister {
+    width: 430px;
+    height: 35px;
+    border-style: none;
+    background-color: #008080;
+    color: white;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+#btnCancel {
+    width: 430px;
+    height: 35px;
+    border: 1px solid #008080;
+    color: #008080;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+.link {
+    font-size: 12px;
+    margin-left: 150px;
+}
+
+a {
+    font-size: 11px;
+    margin-left: 40px;
+    text-decoration: none;
+    color: #008080;
+}
+
+h3 {
+    color: #008080;
+    font-weight: bold;
+}
+
+select, #dob {
+    height: 27px;
+}
+
+.row {
+    margin-top: 15px;
+} 
+
+.heading {
+    padding-bottom: 15px;
+}
+
+input:focus {
+    outline: 0;
+}
+
+
+.errors {
+    color: red;
+    font-size: 11px;
+}
+
